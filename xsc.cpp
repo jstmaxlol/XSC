@@ -53,7 +53,7 @@ int main(int argc, char* argv[]) {
     if (argc > 1) {
         if (argv[1] == "--help" || argv[1] == "-h") {
             usage();
-            return 1;
+            return 0;
         }
         else if (argv[1] == "-r" || argv[1] == "--sqrt") {
             if (argc > 2) {
@@ -65,17 +65,17 @@ int main(int argc, char* argv[]) {
             else if (argc < 3) {
                 cout << "too many arguments!\n";
                 usage();
-                return 1;
+                return 0;
             }
             else if (argc < 2) {
                 cout << "too few arguments!\n";
                 usage();
-                return 1;
+                return 0;
             }
             else {
                 cout << "invalid argument!\n";
                 usage();
-                return 1;
+                return 0;
             }
         }
         else {
@@ -89,17 +89,17 @@ int main(int argc, char* argv[]) {
             else if (argc > 3) {
                 cout << "too many arguments!\n";
                 usage();
-                return 1;
+                return 0;
             }
             else if (argc < 3) {
                 cout << "too few arguments!\ndid you want to calculate a square root? use --sqrt\n";
                 usage();
-                return 1;
+                return 0;
             }
             else {
                 cout << "invalid argument; << " << argv[1] << " >> \n";
                 usage();
-                return 1;
+                return 0;
             }
         }
     }
