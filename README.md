@@ -1,5 +1,6 @@
 # XSC🧮
-XSC (eXtremelySimpleCalculator): simple way to calculate stuff in the terminal \
+**XSC** (e**X**tremely**S**imple**C**alculator): simple way to calculate stuff in the terminal \
+syntax: `xsc <number> <(+|-|x|/|%|^)> <number>` or `xsc -sqrt | -r <number>` \
 pros: "faster because 3 letters"
 
 ## dependencies🤓
