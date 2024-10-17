@@ -5,7 +5,7 @@ using namespace std;
 
 int usage() {
     // Prints usage message (help)
-    system("figlet XSC | lolcat");
+    // system("figlet XSC | lolcat");
     cout << "\neXtremelySimpleCalculator usage:\n"
     << "`xsc --help` for help\n"
     << "`xsc <number> <(+|-|*|/|%|^)> <number>` for basic operation calculating\n"
