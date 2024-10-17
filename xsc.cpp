@@ -4,9 +4,11 @@
 using namespace std;
 
 void clear() {
+    // Clears the screen
     system("clear");
 }
 void usage() {
+    // Prints usage message (help)
     clear();
     system("figlet XSC | lolcat");
     cout << "\neXtremelySimpleCalculator usage:\n"
@@ -16,6 +18,7 @@ void usage() {
 }
 
 int doOper(int n1, char opx[], int n2) {
+    // Performs calculations, TODO: improve :)
     int result;
     switch (opx[1]) {
        case '+':
@@ -46,6 +49,7 @@ int doOper(int n1, char opx[], int n2) {
 }
 
 int main(int argc, char* argv[]) {
+    // Main handler
     if (argc > 1) {
         if (argv[1] == "--help" || argv[1] == "-h") {
             usage();
