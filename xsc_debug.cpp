@@ -3,23 +3,39 @@
 #include <cmath>
 using namespace std;
 
-int usage() {
+void usage() {
     // Prints usage message (help)
     system("figlet XSC | lolcat");
     cout << "\neXtremelySimpleCalculator usage:\n"
     << "`xsc --help` for help\n"
     << "`xsc <number> <(+|-|*|/|%|^)> <number>` for basic operation calculating\n"
     << "`xsc -r|--sqrt <number>` for square root calculation\n";
-    return 0;
 }
 
 int main(int argc, char* argv[]) {
     // main::Calculations();
-    if (argv[1] == "-r" || argv[1] == "--sqrt") {
-        int result = sqrt(atoi(argv[2]));
+    if (argv[2][0] == '+') {
+        cout << atof(argv[1]) + atof(argv[3]);
+    }
+    else if (argv[2][0] == '-') {
+        cout << atof(argv[1]) - atof(argv[3]);
+    }
+    else if (argv[2][0] == '*') {
+        cout << atof(argv[1]) * atof(argv[3]);
+    }
+    else if (argv[2][0] == '/') {
+        cout << atof(argv[1]) / atof(argv[3]);
+    }
+    else if (argv[2][0] == '%') {
+        cout << fmod(atof(argv[1]), atof(argv[3]));
+    }
+    else if (argv[2][0] == '^') {
+        cout << pow(atof(argv[1]), atof(argv[3]));
     }
     else {
-        int result = atoi(argv[1]), argv[2], atoi(argv[3]);
+        cout << "invalid operator!\n";
+        usage();
+        return 0;
     }
 
     // main::Handling();
@@ -27,6 +43,7 @@ int main(int argc, char* argv[]) {
         usage();
         return 0;
     }
+    /*
     else if (argc > 4) {
         cout << "too many arguments!\n";
         usage();
@@ -37,4 +54,5 @@ int main(int argc, char* argv[]) {
         usage();
         return 1;
     }
+    */
 }
