@@ -1,6 +1,6 @@
 # XSC🧮
 XSC (eXtremelySimpleCalculator): simple way to calculate stuff in the terminal \
-pros: "faster because 3 letters" and **colorz**
+pros: "faster because 3 letters"
 
 ## dependencies🤓
 * `figlet` : `pacman -S figlet`
