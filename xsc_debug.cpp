@@ -5,41 +5,12 @@ using namespace std;
 
 int usage() {
     // Prints usage message (help)
-    // system("figlet XSC | lolcat");
+    system("figlet XSC | lolcat");
     cout << "\neXtremelySimpleCalculator usage:\n"
     << "`xsc --help` for help\n"
     << "`xsc <number> <(+|-|*|/|%|^)> <number>` for basic operation calculating\n"
     << "`xsc -r|--sqrt <number>` for square root calculation\n";
     return 0;
-}
-
-int doOperation(int n1, char opx[], int n2) {
-    // Performs calculations, TODO: improve :)
-    int result;
-    switch (opx[1]) {
-       case '+':
-          result = n1 + n2;
-          break;
-       case '-':
-          result = n1 - n2;
-          break;
-       case '*':
-          result = n1 * n2;
-          break;
-       case '/':
-          result = n1 / n2;
-          break;
-       case '%':
-          result = n1 % n2;
-          break;
-       case '^':
-          result = pow(n1, n2);
-          break;
-       default:
-          cout << "invalid operator!\n";
-          break;
-    }
-    return result;
 }
 
 int main(int argc, char* argv[]) {
@@ -48,7 +19,7 @@ int main(int argc, char* argv[]) {
         int result = sqrt(atoi(argv[2]));
     }
     else {
-        int result = doOperation(atoi(argv[1]), argv[2], atoi(argv[3]));
+        int result = atoi(argv[1]), argv[2], atoi(argv[3]);
     }
 
     // main::Handling();
