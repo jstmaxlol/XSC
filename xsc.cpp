@@ -8,7 +8,7 @@ void usage() {
     system("figlet XSC | lolcat");
     cout << "\neXtremelySimpleCalculator usage:\n"
     << "`xsc --help | -h` for help\n"
-    << "`xsc <number> <(+|-|*|/|%|^)> <number>` for mathematical operation\n"
+    << "`xsc <number> <(+|-|x|/|%|^)> <number>` for mathematical operation\n"
     << "`xsc -sqrt | -r <number>` for square root operation\n"
     << "\n[n!] `xsc` doesn't support mathematical expressions (to-do)\n";
 }
@@ -46,7 +46,7 @@ int main(int argc, char* argv[]) {
             else if (op == "-") {
                 result = num1 - num2;
             }
-            else if (op == "*") {
+            else if (op == "x") {
                 result = num1 * num2;
             }
             else if (op == "/") {
