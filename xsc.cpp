@@ -19,6 +19,16 @@ int main(int argc, char* argv[]) {
         string arg = argv[i];
 
         if (arg == "--sqrt" || arg == "-r") {
+            if (i + 1 < argc) {
+                double num = stod(argv[i + 1]);
+                cout << sqrt(num) << "\n";
+                return 0;
+            }
+            else {
+                cout << "[e!] invalid input!\n";
+                usage();
+                return 1;
+            }
         }
         else if (arg == "--help" || arg == "-h") {
             usage();
