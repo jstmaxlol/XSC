@@ -7,7 +7,7 @@ void usage() {
     system("figlet XSC | lolcat");
     cout << "\neXtremelySimpleCalculator usage:\n"
     << "`xsc --help | -h` for help\n"
-    << "`xsc <number> <(+|-|*|/|%|^)> <number>`\n"
+    << "`xsc <number> <(+|-|*|/|%|^)> <number>`\n";
 }
 
 int main(int argc, char* argv[]) {
