@@ -1,7 +1,8 @@
 # XSC🧮
 **XSC** (e**X**tremely**S**imple**C**alculator): the easiest way to calculate stuff in the terminal \
 syntax: `xsc <number> <(+|-|x|/|%|^)> <number>` or `xsc -sqrt | -r <number>` \
-pros: supports floating point number operations.. i guess it's a pro?
+pros: supports floating point number operations.. i guess it's a pro? \
+**note**: compile with **g++**
 
 ## dependencies🤓
 * `figlet` : `pacman -S figlet`
