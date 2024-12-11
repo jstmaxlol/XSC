@@ -11,7 +11,7 @@ pros: supports floating point number operations.. i guess it's a pro? \
 
 ## installation one-liner🤖
 #### download dependencies, copy repo and compile **XSC** ;
-`pacman -S figlet lolcat g++ && git clone https://github.com/jstmaxlol/XSC && cd ./XSC && g++ -o xsc xsc.cpp`
+`pacman -S figlet lolcat gcc && git clone https://github.com/jstmaxlol/XSC && cd ./XSC && g++ -o xsc xsc.cpp`
 #### (optional, but recommended) move to PATH ;
 `mv ./xsc /usr/bin/xsc`
 
