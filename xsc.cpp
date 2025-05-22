@@ -64,6 +64,7 @@ int main(int argc, char** argv) {
         }
         op = argv[2][0];
         return calculate(n1, op, n2);
+		std::cout << "\n";
     }
 
     // if only 1 argument and not help
