@@ -1,6 +1,6 @@
 # XSC🧮
 **XSC** (e**X**tremely**S**imple**C**alculator): the easiest way to calculate stuff in the terminal \
-syntax: `xsc <number> <(+|-|x|/|%|^)> <number>` or `xsc -sqrt | -r <number>` \
+syntax: `xsc <num1> <(+|-|x|/|%|^)> <num2>` or `xsc r <num>` \
 pros: supports floating point number operations.. or smth \
 **note**: compile with **g++**
 
@@ -8,7 +8,7 @@ pros: supports floating point number operations.. or smth \
 **XSC** is now available on the [Arch User Repository](), \
 install it with your favourite AUR helper:
 * `yay` : `yay -S xsc`
-* `paru` : `paru -S package_name`
+* `paru` : `paru -S xsc`
 * `trizen` : `trizen -S xsc`
 * `pamac` : `pamac build xsc`
 * `aurman` : `aurman -S xsc`

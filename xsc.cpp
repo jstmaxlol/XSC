@@ -9,7 +9,7 @@ int calculate(double& n1, char& op, double& n2);
 void usage();
 
 int main(int argc, char** argv) {
-    if (argc > 4) {
+    if (argc > 5) {
         std::cerr << "::> " << red << "xsc.Error" << def << "/" << red << "too_many_arguments " << def;
         return -1;
     }
