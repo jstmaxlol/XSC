@@ -16,7 +16,6 @@ install it with your favourite AUR helper:
 ## dependencies🤓
 * `figlet` : `pacman -S figlet`
 * `lolcat` : `pacman -S lolcat`
-* `bash` : do you really need a guide to get bash?
 
 ## manual installation one-liner🤖
 #### downloads dependencies, clones repo and compiles **xsc3** ;
