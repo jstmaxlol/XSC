@@ -64,7 +64,6 @@ int main(int argc, char** argv) {
         }
         op = argv[2][0];
         return calculate(n1, op, n2);
-		std::cout << "\n";
     }
 
     // if only 1 argument and not help
@@ -75,26 +74,26 @@ int main(int argc, char** argv) {
 int calculate(double& n1, char& op, double& n2) {
     switch (op) {
         case '+':
-            std::cout << n1 + n2;
+            std::cout << n1 + n2 << "\n";
             return 0;
         case '-':
-            std::cout << n1 - n2;
+            std::cout << n1 - n2 << "\n";
             return 0;
         case 'x':
-            std::cout << n1 * n2;
+            std::cout << n1 * n2 << "\n";
             return 0;
         case '/':
             if (n2 == 0) {
                 std::cerr << "::> " << red << "xsc.MathError" << def << "/" << red << "divsion_by_zero";
                 return -1;
             }
-            std::cout << n1 / n2;
+            std::cout << n1 / n2 << "\n";
             return 0;
         case '%':
-            std::cout << (n1 / n2) * 100;
+            std::cout << (n1 / n2) * 100 << "\n";
             return 0;
         case '^':
-            std::cout << pow(n1, n2);
+            std::cout << pow(n1, n2) << "\n";
             return 0;
     }
     return -1;
