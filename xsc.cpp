@@ -79,7 +79,7 @@ int calculate(double& n1, char& op, double& n2) {
         case '-':
             std::cout << n1 - n2;
             return 0;
-        case '*':
+        case 'x':
             std::cout << n1 * n2;
             return 0;
         case '/':
