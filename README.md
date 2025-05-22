@@ -1,8 +1,17 @@
 # XSC🧮
 **XSC** (e**X**tremely**S**imple**C**alculator): the easiest way to calculate stuff in the terminal \
 syntax: `xsc <number> <(+|-|x|/|%|^)> <number>` or `xsc -sqrt | -r <number>` \
-pros: supports floating point number operations.. i guess it's a pro? \
+pros: supports floating point number operations.. or smth \
 **note**: compile with **g++**
+
+## AUR⭐
+**XSC** is now available on the [Arch User Repository](), \
+install it with your favourite AUR helper:
+* `yay` : `yay -S xsc`
+* `paru` : `paru -S package_name`
+* `trizen` : `trizen -S xsc`
+* `pamac` : `pamac build xsc`
+* `aurman` : `aurman -S xsc`
 
 ## dependencies🤓
 * `figlet` : `pacman -S figlet`
@@ -12,7 +21,7 @@ pros: supports floating point number operations.. i guess it's a pro? \
 ## installation one-liner🤖
 #### download dependencies, copy repo and compile **XSC** ;
 `pacman -S figlet lolcat gcc && git clone https://github.com/jstmaxlol/XSC && cd ./XSC && g++ -o xsc xsc.cpp`
-#### (optional, but recommended) move to PATH ;
+#### (optional, but recommended for actually using xsc) move to PATH ;
 `mv ./xsc /usr/bin/xsc`
 
 ## usage⭐
