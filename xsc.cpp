@@ -1,86 +1,109 @@
 #include <iostream>
 #include <string>
 #include <cmath>
-using namespace std;
+
+// github.com/jstmaxlol/escape.ANSI.sux
+#include "escape.ansi.h"
+
+int calculate(double& n1, char& op, double& n2);
+void usage();
+
+int main(int argc, char** argv) {
+    if (argc > 4) {
+        std::cerr << "::> " << red << "xsc.Error" << def << "/" << red << "too_many_arguments " << def;
+        return -1;
+    }
+    if (argc < 2) {
+        std::cerr << "::> " << red << "xsc.Error" << def << "/" << red << "not_enough_arguments " << def;
+        return -1;
+    }
+
+    std::string arg1 = argv[1];
+
+    // help
+    if (arg1 == "help" || arg1 == "h") {
+        usage();
+        return 0;
+    }
+    if (arg1 == "--help" || arg1 == "-h") {
+        std::cerr << "::> " << red << "xsc.Warning" << def << "/" << red << "non_existing_argument\n"
+                  << def << "::> did you mean: " << yellow << "h " << def << "||" << yellow << "help" << def << "?\n";
+        usage();
+        return -1;
+    }
+
+    // square root: xsc <num> r
+    if (argc == 3) {
+        double n1;
+        try {
+            n1 = std::stod(arg1);
+        } catch (...) {
+            std::cerr << "::> " << red << "xsc.Error" << def << "/" << red << "invalid_number " << def;
+            return -1;
+        }
+        std::string opstr = argv[2];
+        if (opstr == "r") {
+            std::cout << sqrt(n1) << std::endl;
+            return 0;
+        } else {
+            std::cerr << "::> " << red << "xsc.Error" << def << "/" << red << "invalid_operator " << def;
+            return -1;
+        }
+    }
+
+    // normal operation: xsc <num1> <op> <num2>
+    if (argc == 4) {
+        double n1, n2;
+        char op;
+        try {
+            n1 = std::stod(arg1);
+            n2 = std::stod(argv[3]);
+        } catch (...) {
+            std::cerr << "::> " << red << "xsc.Error" << def << "/" << red << "invalid_number " << def;
+            return -1;
+        }
+        op = argv[2][0];
+        return calculate(n1, op, n2);
+    }
+
+    // if only 1 argument and not help
+    std::cerr << "::> " << red << "xsc.Error" << def << "/" << red << "not_enough_arguments " << def;
+    return -1;
+}
+
+int calculate(double& n1, char& op, double& n2) {
+    switch (op) {
+        case '+':
+            std::cout << n1 + n2;
+            return 0;
+        case '-':
+            std::cout << n1 - n2;
+            return 0;
+        case '/':
+            if (n2 == 0) {
+                std::cerr << "::> " << red << "xsc.MathError" << def << "/" << red << "divsion_by_zero";
+                return -1;
+            }
+            std::cout << n1 / n2;
+            return 0;
+        case '%':
+            std::cout << (n1 / n2) * 100;
+            return 0;
+        case '^':
+            std::cout << pow(n1, n2);
+            return 0;
+    }
+    return -1;
+}
 
 void usage() {
     // Prints usage message (help)
     system("figlet XSC | lolcat");
-    cout << "\neXtremelySimpleCalculator usage:\n"
-    << "`xsc --help | -h` for help\n"
-    << "`xsc <number> <(+|-|x|/|%|^)> <number>` for mathematical operation\n"
-    << "`xsc -sqrt | -r <number>` for square root operation\n"
-    << "\n[n!] `xsc` doesn't support mathematical expressions (to-do)\n";
-}
+    std::cout
+    << "[ eXtremelySimpleCalculator usage screen ]\n\n"
 
-int main(int argc, char* argv[]) {
-    // AAAAAAAAAA (a.k.a. argument validation and execution)
-    for (int i = 1; i < argc; ++i) {
-        string arg = argv[i];
-
-        if (arg == "--sqrt" || arg == "-r") {
-            if (i + 1 < argc) {
-                double num = stod(argv[i + 1]);
-                cout << sqrt(num) << "\n";
-                return 0;
-            }
-            else {
-                cout << "[e!] invalid input!\n";
-                usage();
-                return 1;
-            }
-        }
-        else if (arg == "--help" || arg == "-h") {
-            usage();
-            return 0;
-        }
-        else if (i + 2 < argc) {
-            string op = argv[i + 1];
-            double num1 = stod(argv[i]);
-            double num2 = stod(argv[i + 2]);
-            double result;
-
-            if (op == "+") {
-                result = num1 + num2;
-            }
-            else if (op == "-") {
-                result = num1 - num2;
-            }
-            else if (op == "x") {
-                result = num1 * num2;
-            }
-            else if (op == "/") {
-                if (num2 != 0) {
-                    result = num1 / num2;
-                }
-                else {
-                    cout << "[math_e!] division by zero!\n";
-                    usage();
-                    return 1;
-                }
-            }
-            else if (op == "%") {
-                result = fmod(num1, num2);
-            }
-            else if (op == "^") {
-                result = pow(num1, num2);
-            }
-            else {
-                cout << "[e!] invalid operator!\n";
-                usage();
-                return 1;
-            }
-            // show result :)
-            cout << result << "\n";
-            return 0;
-        }
-        else {
-            cout << "[e!] invalid input!\n";
-            usage();
-            return 1;
-        }
-
-    }
-
-    return 0;
+    << "'xsc help / h'                          | print usage screen (this one!)\n"
+    << "'xsc <num1> <(+|-|x|/|%|^)> <num2>'     | outputs expression's result\n"
+    << "'xsc <num1> r'                          | outputs the square root of num1\n"
+    ;
 }
