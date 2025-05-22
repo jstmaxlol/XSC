@@ -79,6 +79,9 @@ int calculate(double& n1, char& op, double& n2) {
         case '-':
             std::cout << n1 - n2;
             return 0;
+        case '*':
+            std::cout << n1 * n2;
+            return 0;
         case '/':
             if (n2 == 0) {
                 std::cerr << "::> " << red << "xsc.MathError" << def << "/" << red << "divsion_by_zero";
