@@ -1,5 +1,5 @@
 # xsc3🧮
-**xsc3** (e**X**tremely**S**imple**C**alculator 3): the easiest way to calculate stuff in the terminal \
+**xsc3** (e**X**tremely**S**imple**C**alculator **3**): the easiest way to calculate stuff in the terminal \
 syntax: `xsc <num1> <(+|-|x|/|%|^)> <num2>` or `xsc r <num>` \
 pros: supports floating point number operations.. or smth \
 **note**: compile with **g++**
