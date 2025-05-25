@@ -5,7 +5,7 @@ pros: supports floating point number operations.. or smth \
 **note**: compile with **g++**
 
 ## AUR⭐
-**xsc3** is now available on the [Arch User Repository](), \
+**xsc3** is now available on the [Arch User Repository](https://aur.archlinux.org/packages/xsc), \
 install it with your favourite AUR helper:
 * `yay` : `yay -S xsc`
 * `paru` : `paru -S xsc`
