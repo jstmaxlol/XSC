@@ -27,7 +27,7 @@ int main(int argc, char** argv) {
     }
     if (arg1 == "--help" || arg1 == "-h") {
         std::cerr << "::> " << red << "xsc.Warning" << def << "/" << red << "non_existing_argument\n"
-                  << def << "::> did you mean: " << yellow << "h " << def << "||" << yellow << "help" << def << "?\n";
+                  << def << "::> did you mean: " << yellow << "h " << def << " ||" << yellow << "help" << def << "?\n";
         usage();
         return -1;
     }
@@ -101,7 +101,7 @@ int calculate(double& n1, char& op, double& n2) {
 
 void usage() {
     // Prints usage message (help)
-    system("figlet XSC | lolcat");
+	system("figlet XSC | lolcat"); // TODO: fallback if figlet & lolcat are not installed (not needed for aur users, so is it useful?)
     std::cout
     << "[ eXtremelySimpleCalculator usage screen ]\n\n"
 
