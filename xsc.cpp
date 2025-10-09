@@ -3,7 +3,7 @@
 #include <cmath>
 
 // github.com/jstmaxlol/escape.ANSI.sux
-#include "escape.ansi.h"
+#include "escape.ansi"
 
 int calculate(double& n1, char& op, double& n2);
 void usage();
@@ -27,7 +27,7 @@ int main(int argc, char** argv) {
     }
     if (arg1 == "--help" || arg1 == "-h") {
         std::cerr << "::> " << red << "xsc.Warning" << def << "/" << red << "non_existing_argument\n"
-                  << def << "::> did you mean: " << yellow << "h " << def << " ||" << yellow << "help" << def << "?\n";
+                  << def << "::> did you mean: " << yellow << "h" << def << " || " << yellow << "help" << def << "?\n";
         usage();
         return -1;
     }
