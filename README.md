@@ -1,5 +1,5 @@
 # xsc3🧮
-**xsc3** (e**X**tremely**S**imple**C**alculator **3**): the easiest way to calculate stuff in the terminal \
+**xsc3** (e**X**tremely**S**imple**C**alculator **3**): the aaaaa-iest way to calculate stuff in the terminal \
 syntax: `xsc <num1> <(+|-|x|/|%|^)> <num2>` or `xsc r <num>` \
 pros: supports floating point number operations.. or smth \
 **note**: compile with **g++**
@@ -28,4 +28,4 @@ if didn't know, adding a binary to PATH makes it so that you do not have to find
 uhh.. `xsc h` and stfu
 
 &nbsp;
-###### jstmax@62-69-74-2E-6C-79-2F-6D-78-5F-69-6E-66-6F
+###### jstmax! : <jstmaxlol@disroot.org> & <maxwasmailed@proton.me>
