@@ -1,4 +1,5 @@
 #include <iostream>
+#include <print>
 #include <string>
 #include <cmath>
 
@@ -10,12 +11,12 @@ void usage();
 
 int main(int argc, char** argv) {
     if (argc > 5) {
-        std::cerr << "::> " << red << "xsc.Error" << def << "/" << red << "too_many_arguments " << def;
-        return -1;
+        std::print("::> {}xsc.Error{}/{}too_many_arguments{}\n", red, def, red, def);
+        return 1;
     }
     if (argc < 2) {
-        std::cerr << "::> " << red << "xsc.Error" << def << "/" << red << "not_enough_arguments " << def;
-        return -1;
+        std::print("::> {}xsc.Error{}/{}not_enough_arguments{}\n", red, def, red, def);
+        return 1;
     }
 
     std::string arg1 = argv[1];
@@ -26,10 +27,10 @@ int main(int argc, char** argv) {
         return 0;
     }
     if (arg1 == "--help" || arg1 == "-h") {
-        std::cerr << "::> " << red << "xsc.Warning" << def << "/" << red << "non_existing_argument\n"
-                  << def << "::> did you mean: " << yellow << "h" << def << " || " << yellow << "help" << def << "?\n";
+        std::print("::> {}xsc.Warning{}/{}non_existing_argument{}\n", red, def, red, def);
+        std::print("::> did you mean: {}h{} || {}help{}?\n", yellow, def, yellow, def);
         usage();
-        return -1;
+        return 1;
     }
 
     // square root: xsc <num> r
@@ -38,16 +39,16 @@ int main(int argc, char** argv) {
         try {
             n1 = std::stod(arg1);
         } catch (...) {
-            std::cerr << "::> " << red << "xsc.Error" << def << "/" << red << "invalid_number " << def;
-            return -1;
+            std::print("::> {}xsc.Error{}/{}invalid_number{}\n", red, def, red, def);
+            return 1;
         }
         std::string opstr = argv[2];
         if (opstr == "r") {
-            std::cout << sqrt(n1) << std::endl;
+            std::print("{}\n", sqrt(n1));
             return 0;
         } else {
-            std::cerr << "::> " << red << "xsc.Error" << def << "/" << red << "invalid_operator " << def;
-            return -1;
+            std::print("::> {}xsc.Error{}/{}invalid_operator{}\n", red, def, red, def);
+            return 1;
         }
     }
 
@@ -59,44 +60,51 @@ int main(int argc, char** argv) {
             n1 = std::stod(arg1);
             n2 = std::stod(argv[3]);
         } catch (...) {
-            std::cerr << "::> " << red << "xsc.Error" << def << "/" << red << "invalid_number " << def;
-            return -1;
+            std::print("::> {}xsc.Error{}/{}invalid_number{}\n", red, def, red, def);
+            return 1;
         }
         op = argv[2][0];
         return calculate(n1, op, n2);
     }
 
     // if only 1 argument and not help
-    std::cerr << "::> " << red << "xsc.Error" << def << "/" << red << "not_enough_arguments " << def;
-    return -1;
+    // TODO: remove this shit because it *is* redundant(, right?)
+    std::print("::> {}xsc.Error{}/{}not_enough_arguments{}\n", red, def, red, def);
+    return 1;
 }
 
 int calculate(double& n1, char& op, double& n2) {
     switch (op) {
-        case '+':
+        case '+': {
             std::cout << n1 + n2 << "\n";
             return 0;
-        case '-':
+        }
+        case '-': {
             std::cout << n1 - n2 << "\n";
             return 0;
-        case 'x':
+        }
+        case 'x': {
             std::cout << n1 * n2 << "\n";
             return 0;
-        case '/':
+        }
+        case '/': {
             if (n2 == 0) {
-                std::cerr << "::> " << red << "xsc.MathError" << def << "/" << red << "divsion_by_zero";
-                return -1;
+                std::print("::> {}xsc.MathError{}/{}division_by_zero{}\n", red, def, red, def);
+                return 1;
             }
             std::cout << n1 / n2 << "\n";
             return 0;
-        case '%':
+        }
+        case '%': {
             std::cout << (n1 / n2) * 100 << "\n";
             return 0;
-        case '^':
+        }
+        case '^': {
             std::cout << pow(n1, n2) << "\n";
             return 0;
+        }
     }
-    return -1;
+    return 1;
 }
 
 void usage() {

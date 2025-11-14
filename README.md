@@ -14,12 +14,12 @@ install it with your favourite AUR helper:
 * `aurman` : `aurman -S xsc`
 
 ## dependencies🤓
-* `figlet` : `pacman -S figlet`
-* `lolcat` : `pacman -S lolcat`
+* `figlet` : `paru -S figlet`
+* `lolcat` : `paru -S lolcat`
 
 ## manual installation one-liner🤖
 #### downloads dependencies, clones repo and compiles **xsc3** ;
-`pacman -S figlet lolcat gcc && git clone https://github.com/jstmaxlol/xsc && cd ./xsc && g++ -o xsc xsc.cpp -O2`
+`paru -S figlet lolcat gcc && git clone https://github.com/jstmaxlol/xsc && cd ./xsc && g++ -o xsc xsc.cpp -O2 -std=c++23`
 #### (optional, but recommended for actually using xsc) moves **xsc3** to PATH ;
 `mv ./xsc /usr/bin/xsc` \
 if didn't know, adding a binary to PATH makes it so that you do not have to find yourself in the installation path of the binary to execute it!
