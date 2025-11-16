@@ -28,4 +28,4 @@ if didn't know, adding a binary to PATH makes it so that you do not have to find
 uhh.. `xsc h` and stfu
 
 &nbsp;
-###### jstmax! : <jstmaxlol@disroot.org> & <maxwasmailed@proton.me>
+###### jstmax! : <jstmaxlol@disroot.org>, <maxwasmailed@proton.me>
