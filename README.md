@@ -6,6 +6,8 @@ syntax: `xsc <num1> <(+|-|x|/|%|^)> <num2>` or `xsc r <num>`
 
 pros: supports floating point number operations.. or something
 
+---
+
 ## AUR
 
 **xsc3** is now available on the [Arch User Repository](https://aur.archlinux.org/packages/xsc),
@@ -31,6 +33,8 @@ install it with your favourite AUR helper:
 #### (optional, but recommended for actually using xsc) moves **xsc3** to PATH ;
 `mv ./xsc /usr/bin/xsc`
 if didn't know, adding a binary to PATH makes it so that you do not have to find yourself in the installation path of the binary to execute it!
+
+---
 
 ## usage
 
